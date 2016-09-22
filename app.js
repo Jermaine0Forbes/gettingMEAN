@@ -10,6 +10,7 @@ var routes = require('./app_server/routes/index');
 var users = require('./app_server/routes/users');
 
 var app = express();
+
 console.log(process.env.NODE_ENV);
 
 // view engine setup

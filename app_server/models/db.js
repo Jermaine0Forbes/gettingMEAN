@@ -1,21 +1,22 @@
 var mongoose = require("mongoose");
 var dbURI = 'mongodb://localhost/Loc8r';
 if(process.env.NODE_ENV === 'production'){
-  dbURI = process.env.MONGOLAB_URI;
+  dbURI = "mongodb://heroku_rklrcl64:1dqo12namli22f1lfc63ube6s@ds035766.mlab.com:35766/heroku_rklrcl64";
+  // dbURI = process.env.MONGOLAB_URI;
 }
 var readline = require('readline');
 mongoose.connect(dbURI);
 
-if( process.platform === "win32"){
-  var rl = readline.createInterface({
-     input: process.stdin,
-     output: process.stdout
-  });
-
-  rl.on("SIGINT", function(){
-    process.emit("SIGINT");
-  });
-}
+// if( process.platform === "win32"){
+//   var rl = readline.createInterface({
+//      input: process.stdin,
+//      output: process.stdout
+//   });
+//
+//   rl.on("SIGINT", function(){
+//     process.emit("SIGINT");
+//   });
+// }
 
 
 mongoose.connection.on('connected', function(){
