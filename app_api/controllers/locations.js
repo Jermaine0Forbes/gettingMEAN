@@ -1,6 +1,13 @@
 var mongoose = require("mongoose");
 var Loc = mongoose.model("Location");
 var request = require("request");
+var apiOptions = {
+  server: "http://localhost:3000"
+};
+if(process.env.NODE_ENV === 'production'){
+  apiOptions.server = "http://stormy-shore-42538.herokuapp.com/"
+}
+
 
 var theEarth = (function(){
   var earthRadius = 6371;//km not miles around the earth
